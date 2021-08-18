@@ -4,8 +4,8 @@ const moment = require('moment');
 
 const userSchema = new mongoose.Schema({
     name:String,
-    Email:String,
-    passwords:String,
+    email:String,
+    password:String,
     Status:Boolean,
     date:{type:Date,default:Date.now},
     roleId: { type: mongoose.Schema.ObjectId, ref: "role" },
