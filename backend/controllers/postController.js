@@ -26,7 +26,14 @@ const publish = async(req,res) =>{
 }
 
 
+const listpublished = async (req,res) =>{
+    let post = await Post.find({text: new RegExp(req.params["text"],"i")}).populate("User_id").exec();
+    
+  
+    if(!post || post==0) return res.status(400).send("Sorry no post created ");
+
+    return res.status(200).send({post});
+}
 
 
-
-module.exports = {publish};
+module.exports = {publish,listpublished};
