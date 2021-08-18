@@ -1,6 +1,6 @@
 const User = require('../models/userSchema');
 
-const Role = require('../models/role');
+const Role = require('../models/userSchema');
 
 const bcrypt = require('bcrypt');
 
