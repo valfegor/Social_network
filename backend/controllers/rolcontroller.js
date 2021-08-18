@@ -24,7 +24,7 @@ const registerRole = async (req,res) => {
 
 const listRoles = async (req,res)=>{
     const role = await Role.find();
-    if(!role) return res.status(400).send("Sorry no rols");
+    if(!role || role == 0) return res.status(400).send("Sorry no rols");
     return res.status(201).send({role});
 }
 
