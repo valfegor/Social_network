@@ -21,3 +21,12 @@ const registerRole = async (req,res) => {
 
     return res.status(201).send({result});
 }
+
+const listRoles = async (req,res)=>{
+    const role = await Role.find();
+    if(!role) return res.status(400).send("Sorry no rols");
+    return res.status(201).send({role});
+}
+
+
+module.exports = {registerRole,listRoles}

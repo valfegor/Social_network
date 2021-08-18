@@ -4,7 +4,7 @@ const roleSchema = new mongoose.Schema({
     name:String,
     description:String,
     date:{type:Date,default:Date.now},
-    Status:boolean,
+    Status:Boolean,
 })
 
 
