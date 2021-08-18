@@ -9,7 +9,15 @@ const publish = async(req,res) =>{
     
     const user = await User.findOne({name:req.body.user});
 
-    console.log(user);
+    if(!user) return res.status(400).send("Sorry that user dont existe please register an account and use your credentials");
+
+    const post = new Post({
+        text: req.body.text,
+        hash: req.body.hash,
+        
+    })
 }
 
 
+
+module.exports = {publish};
